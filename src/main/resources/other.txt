@@ -1,0 +1,12 @@
+security:
+  oauth2:
+    resource:
+      loadBalanced: true
+      #userInfoUri: http://${proxy:localhost:4444}/auth_service/users/current #problem with load balanced userInfoUri
+      userInfoUri: http://auth_service/users/current
+      #userInfoUri: http://auth/hascode/user
+    client:
+      client-id: clientapp
+      client-secret: 123456
+      scope: read,write
+      auto-approve-scopes: '.*'
