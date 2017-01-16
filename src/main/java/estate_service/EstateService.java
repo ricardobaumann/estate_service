@@ -14,18 +14,13 @@ public class EstateService {
     @Autowired
     private EstateRepository estateRepository;
 
-    @Autowired
-    private PaymentClient paymentClient;
-
+    @PaymentOK
     @RolesAllowed("ROLE_ADMIN")
     public Estate save(Estate estate) {
-        StatusDTO statusDTO = paymentClient.getStatus(estate.getCreatedBy());
-        if (statusDTO.getStatus()!=Status.OK) {
-            throw new PaymentException(statusDTO);
-        }
         return estateRepository.save(estate);
     }
 
+    @PaymentOK
     @RolesAllowed({"ROLE_ADMIN","ROLE_USER"})
     public Estate find(Long id) {
         return estateRepository.findOne(id);
