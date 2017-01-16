@@ -1,5 +1,9 @@
-package estate_service;
+package estate_service.services;
 
+import estate_service.exceptions.PaymentException;
+import estate_service.models.Estate;
+import estate_service.models.Status;
+import estate_service.models.StatusDTO;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
@@ -16,12 +20,12 @@ public class PaymentAspect {
     @Autowired
     private PaymentClient paymentClient;
 
-    @Before(value = "@annotation(estate_service.PaymentOK)")
+    @Before(value = "@annotation(estate_service.services.PaymentOK)")
     public void before(JoinPoint joinPoint) {
         if (joinPoint.getArgs()[0] instanceof Estate) {
             Estate estate = (Estate) joinPoint.getArgs()[0];
             StatusDTO statusDTO = paymentClient.getStatus(estate.getCreatedBy());
-            if (statusDTO.getStatus()!=Status.OK) {
+            if (statusDTO.getStatus()!= Status.OK) {
                 throw new PaymentException(statusDTO);
             }
         }

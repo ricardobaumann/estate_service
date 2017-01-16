@@ -1,4 +1,4 @@
-package estate_service;
+package estate_service.models;
 
 import lombok.Data;
 

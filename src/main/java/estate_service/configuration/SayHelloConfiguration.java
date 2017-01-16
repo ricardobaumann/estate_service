@@ -1,4 +1,4 @@
-package estate_service;
+package estate_service.configuration;
 
 import com.netflix.client.config.IClientConfig;
 import com.netflix.loadbalancer.AvailabilityFilteringRule;

@@ -1,5 +1,7 @@
-package estate_service;
+package estate_service.services;
 
+import estate_service.models.Estate;
+import estate_service.repository.EstateRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -21,8 +23,10 @@ public class EstateService {
     }
 
     @PaymentOK
-    @RolesAllowed({"ROLE_ADMIN","ROLE_USER"})
+    @RolesAllowed({"ROLE_ADMIN", "ROLE_USER"})
     public Estate find(Long id) {
         return estateRepository.findOne(id);
     }
+
+
 }

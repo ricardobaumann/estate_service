@@ -1,4 +1,4 @@
-package estate_service;
+package estate_service.services;
 
 import org.springframework.stereotype.Component;
 

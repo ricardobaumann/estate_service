@@ -1,8 +1,6 @@
-package estate_service;
+package estate_service.configuration;
 
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.web.client.RestTemplate;
 
 /**
  * Created by ricardobaumann on 09/01/17.

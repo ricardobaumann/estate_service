@@ -1,5 +1,6 @@
-package estate_service;
+package estate_service.repository;
 
+import estate_service.models.Estate;
 import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.stereotype.Repository;
 

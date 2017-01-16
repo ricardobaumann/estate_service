@@ -1,4 +1,4 @@
-package estate_service;
+package estate_service.configuration;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.event.ApplicationReadyEvent;

@@ -1,4 +1,4 @@
-package estate_service;
+package estate_service.models;
 
 /**
  * Created by ricardobaumann on 06/01/17.

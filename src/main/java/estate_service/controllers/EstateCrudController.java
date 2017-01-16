@@ -1,5 +1,9 @@
-package estate_service;
+package estate_service.controllers;
 
+import estate_service.exceptions.NotFoundException;
+import estate_service.models.Estate;
+import estate_service.models.EstateDTO;
+import estate_service.services.EstateService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
